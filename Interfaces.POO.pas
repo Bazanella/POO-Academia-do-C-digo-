@@ -4,11 +4,14 @@ interface
 
 type
 
+  TevDsiplay = procedure(aConteudo: String) of Object;
+
   IPessoa = Interface
   ['{0A980B29-CCB9-4191-A7E2-2B662A7DD03C}']
     function Nome(aValor: String): IPessoa;
     function Sobrenome(aValor: String): IPessoa;
-    function NomeCompleto: String;
+    function NomeCompleto: IPessoa;
+    function Display(aevDsiplay: TevDsiplay): IPessoa;
   end;
 
   IPessoaFactory =  interface

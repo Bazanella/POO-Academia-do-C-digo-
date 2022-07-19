@@ -16,7 +16,7 @@ object Form1: TForm1
   TextHeight = 13
   object Edit1: TEdit
     Left = 8
-    Top = 32
+    Top = 82
     Width = 121
     Height = 21
     TabOrder = 0
@@ -24,7 +24,7 @@ object Form1: TForm1
   end
   object Edit2: TEdit
     Left = 135
-    Top = 32
+    Top = 82
     Width = 130
     Height = 21
     TabOrder = 1
@@ -32,7 +32,7 @@ object Form1: TForm1
   end
   object Button1: TButton
     Left = 8
-    Top = 72
+    Top = 112
     Width = 121
     Height = 25
     Caption = 'Nome Completo'
@@ -45,5 +45,18 @@ object Form1: TForm1
     Width = 247
     Height = 169
     TabOrder = 3
+  end
+  object RadioGroup1: TRadioGroup
+    Left = 8
+    Top = 24
+    Width = 185
+    Height = 41
+    Caption = 'Tipo de Pessoa'
+    Columns = 2
+    ItemIndex = 0
+    Items.Strings = (
+      'F'#237'sica'
+      'Jur'#237'dica')
+    TabOrder = 4
   end
 end

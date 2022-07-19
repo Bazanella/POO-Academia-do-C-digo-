@@ -8,11 +8,14 @@ uses
 type
   TModelPessoaJuridica = class(TInterfacedObject, IPessoa)
   private
+    FevDsiplay: TevDsiplay;
     FNome: String;
     FSobrenome: String;
     function Nome(aValor: String): IPessoa;
     function Sobrenome(aValor: String): IPessoa;
-    function NomeCompleto: String;
+    function NomeCompleto: IPessoa;
+    function Display(aevDsiplay: TevDsiplay): IPessoa;
+
   public
     class function Novo: IPessoa;
   end;
@@ -20,15 +23,22 @@ type
 
 implementation
 
+function TModelPessoaJuridica.Display(aevDsiplay: TevDsiplay): IPessoa;
+begin
+  Result := Self;
+  FevDsiplay := aevDsiplay
+end;
+
 function TModelPessoaJuridica.Nome(aValor: String): IPessoa;
 begin
   FNome := AValor;
   Result := Self;
 end;
 
-function TModelPessoaJuridica.NomeCompleto: String;
+function TModelPessoaJuridica.NomeCompleto: IPessoa;
 begin
-  Result := FNome +' '+ FSobrenome + ' LTDA ME';
+  Result := Self;
+  FevDsiplay( FNome +' '+ FSobrenome + ' LTDA ME');
 end;
 
 class function TModelPessoaJuridica.Novo: IPessoa;
